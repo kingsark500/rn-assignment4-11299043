@@ -11,10 +11,10 @@ export default function HomeTabs() {
     return(
         <Tab.Navigator>
 
-        <Tab.screen name = "Homepage" component = {Homepage}                 
+        <Tab.Screen name = "Login" component = {LoginPage}                 
         option={{headerShown:false}}/>
 
-        <Tab.screen name = "Login" component = {LoginPage}                 
+        <Tab.Screen name = "Home" component = {Homepage}                 
         option={{headerShown:false}}/>
 
         </Tab.Navigator>
