@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-import { StyleSheet, Text, View, TextInput,Button,Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput,Button,Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {Ionicons} from '@expo/vector-icons';
 import FlatButton from './Button';
@@ -16,7 +16,7 @@ export default function LoginPage(props) {
 
     return(
 
-        <View>
+        <View style={styles.container}>
             
             <View>
             <Text style={{color:'#356899', fontWeight:'600', textAlign:'left',fontSize:22,
@@ -42,7 +42,7 @@ export default function LoginPage(props) {
              <TextInput style={styles.maxinput} placeholder='Password' value={password}     
             onChangeText={setPassword} placeholderTextColor='#AFB0B6' />
 
-            <FlatButton text='Log in' onPress ={props.handleLogin} />
+            <FlatButton text='Log in' onPress ={props.handleLogin}  />
 
             <Text style={{fontSize:13,textAlign:'center',fontWeight:'400',color:'#AFB0B6',
                 lineHeight:16.44, height:16,top:80,
@@ -85,8 +85,11 @@ export default function LoginPage(props) {
                 marginBottom:10,
                 borderRadius: 10,
                 left:24,
-                backgroundColor:'#ffff'
+                backgroundColor:'#ffff',
+               
             },
+
+          
 
 
            
