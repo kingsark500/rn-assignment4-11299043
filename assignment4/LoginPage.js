@@ -1,17 +1,16 @@
 import React,{useState} from 'react';
 
-import { StyleSheet, Text, View, TextInput,Button,Image} from 'react-native';
+import { StyleSheet, Text, View, TextInput,Image,TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import {Ionicons} from '@expo/vector-icons';
-import FlatButton from './Button';
 
-export default function LoginPage(props) {
+
+export default function LoginPage({navigation}) {
 
     const [name , setName] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
 
     const handleLogin = () => {
-        Navigation.navigate('Home');
+        navigation.navigate('Home',{name,email});
     };
 
     return(
@@ -39,10 +38,12 @@ export default function LoginPage(props) {
             <TextInput style={styles.maxinput} placeholder='Name' value={name}     
             onChangeText={setName} placeholderTextColor='#AFB0B6' />
 
-             <TextInput style={styles.maxinput} placeholder='Password' value={password}     
-            onChangeText={setPassword} placeholderTextColor='#AFB0B6' />
+             <TextInput style={styles.maxinput} placeholder='Email' value={email}     
+            onChangeText={setEmail} placeholderTextColor='#AFB0B6' />
 
-            <FlatButton text='Log in' onPress ={props.handleLogin}  />
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+            <Text style={styles.buttonText}>Log in</Text>
+        </TouchableOpacity>
 
             <Text style={{fontSize:13,textAlign:'center',fontWeight:'400',color:'#AFB0B6',
                 lineHeight:16.44, height:16,top:80,
@@ -88,6 +89,25 @@ export default function LoginPage(props) {
                 backgroundColor:'#ffff',
                
             },
+            button: {
+                height:56,
+                backgroundColor: '#1877F2',
+                left:24,
+                borderRadius:10,
+                paddingVertical:16,
+                paddingHorizontal:48,
+                
+                gap:10,
+                width:327,
+                top:25
+              },
+
+            buttonText: {
+                color: '#FFF',
+                fontSize: 18,
+                fontWeight: 'bold',
+                textAlign:'center',
+              },
 
           
 

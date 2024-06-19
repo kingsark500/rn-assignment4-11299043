@@ -1,9 +1,8 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { StyleSheet, Text, View } from 'react-native';
-import HomeTabs from './HomeTabs';
 import LoginPage from './LoginPage';
+import Homepage from './HomePage';
 
 const Stack = createStackNavigator();
 
@@ -11,13 +10,13 @@ export default function App() {
   return (
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = "Home">
+      <Stack.Navigator initialRouteName = "Login">
 
       <Stack.Screen name = "Login" component = {LoginPage}   
       option= {{headerShown:false}}/>
 
       
-      <Stack.Screen name = "Home" component = {HomeTabs}   
+      <Stack.Screen name = "Home" component = {Homepage}   
       option= {{headerShown:false}}/>
 
 

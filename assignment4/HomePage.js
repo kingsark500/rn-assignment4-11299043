@@ -6,11 +6,11 @@ const profileImage = { uri: 'https://your-profile-image-url.com' }; // Replace w
 
 const featuredJobs = [
   {
-    id: '1',title: 'Software Engineer',company: 'Facebook',salary: '$180,000',location: 'Accra, Ghana',
+    id: '1',image: require('./assets/facebook.png'),title: 'Software Engineer',company: 'Facebook',salary: '$180,000',location: 'Accra, Ghana',
   },
 
   {
-    id: '2', title: 'Data Scientist',company: 'Google',salary: '$160,000',location: 'New York, US',
+    id: '2',image: require('./assets/google.png'), title: 'Data Scientist',company: 'Google',salary: '$160,000',location: 'New York, US',
   },
 
   {
@@ -34,15 +34,15 @@ const featuredJobs = [
 
 const popularJobs = [
   {
-    id: '1', title: 'Jr Executive',company: 'Burger King',salary: '$96,000/y',location: 'Los Angeles, US',
+    id: '1',image: require('./assets/burgerKing.png'), title: 'Jr Executive',company: 'Burger King',salary: '$96,000/y',location: 'Los Angeles, US',
   },
 
   {
-    id: '2',title: 'Product Manager',company: 'Beats',salary: '$84,000/y',location: 'Florida, US',
+    id: '2',image: require('./assets/beatsbydre.png'),title: 'Product Manager',company: 'Beats',salary: '$84,000/y',location: 'Florida, US',
   },
 
   {
-    id: '3',title: 'Product Manager',company: 'Facebook',salary: '$86,000/y',location: 'Florida, US',
+    id: '3',image: require('./assets/facebook.png'),title: 'Product Manager',company: 'Facebook',salary: '$86,000/y',location: 'Florida, US',
   },
   
   {
@@ -88,22 +88,7 @@ const JobItem = ({ job }) => (
   </View>
 );
 
-const getCompanyLogo = (company) => {
-  switch (company) {
-    case 'Burger King':
-      return 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Burger_King_Logo.svg';
 
-    case 'Beats':
-      return 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Beats_by_Dre_logo.svg';
-
-    case 'Facebook':
-      return 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg';
-
-    default:
-      return 'https://via.placeholder.com/40';
-
-  }
-};
 
 
 
@@ -145,6 +130,7 @@ export default function Homepage() {
             
 
             <View style={styles.featurejobText}>
+           
             <Text style={styles.jobTitle}>{item.title}</Text>
             <Text style={styles.jobCompany}>{item.company}</Text>
 
@@ -171,7 +157,7 @@ export default function Homepage() {
 
       <View style={styles.popularJobItem}>
     
-
+      
       <Text style={styles.jobTitlePop}>{item.title}</Text>
 
       <Text style={styles.jobCompanyPop}>{item.company}</Text>
@@ -218,7 +204,7 @@ contentContainerStyle={styles.popularJobsList}
     },
     ericEmail: {
       fontSize: 20,
-      color: '#95969D',
+      color: '#6C757D',
       width:254,
     },
     searchContainer: {
@@ -236,6 +222,7 @@ contentContainerStyle={styles.popularJobsList}
       backgroundColor:'#F2F2F3',
       height:48,
       width:263,
+       borderColor: '#E4E4E4'
     },
    
     sectionTitle: {
@@ -249,9 +236,10 @@ contentContainerStyle={styles.popularJobsList}
       marginBottom: 20,
       
     },
+   
 
     featuredJobItem: {
-      backgroundColor: '#34A853',
+      backgroundColor: '#4285F4',
       borderRadius: 24,
       padding: 15,
       marginRight: 15,
@@ -337,7 +325,7 @@ contentContainerStyle={styles.popularJobsList}
       color:'#0D0D26',
       width:89,
       height:40,
-      left:265,
+      left:260,
       bottom:54,
     },
     jobSalaryPop:{
